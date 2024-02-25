@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://77jr21p07ndy"]
+
+[ext_resource type="Texture2D" uid="uid://m8g1tg48htja" path="res://艺术/关卡图片/樱之诗关卡/俄罗斯方块下坠/俄罗斯方块2.png" id="1_nid7b"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_elbu2"]
+texture = ExtResource("1_nid7b")
+texture_region_size = Vector2i(18, 17)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gadws"]
+tile_size = Vector2i(36, 34)
+sources/0 = SubResource("TileSetAtlasSource_elbu2")
+
+[sub_resource type="GDScript" id="GDScript_wpq78"]
+script/source = "extends TileMap
+@onready var next_tilemap = $\".\"
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	绘制下个方块()
+
+
+func 绘制下个方块():
+		next_tilemap.set_cell(0, Vector2i(0,1), 0)
+		#tilemap绘制cell，XY后是使用的图集
+		
+"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="NextTilemap" type="TileMap" parent="."]
+position = Vector2(921, 117)
+tile_set = SubResource("TileSet_gadws")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 0, 0, 65536, 0, 0, 65537, 0, 0, 131071, 0, 0, 131070, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0)
+script = SubResource("GDScript_wpq78")

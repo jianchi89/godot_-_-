@@ -1,0 +1,218 @@
+[gd_scene load_steps=27 format=3 uid="uid://hy2tobo12xg7"]
+
+[ext_resource type="Texture2D" uid="uid://bl5hasx53dcqb" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级1.png" id="1_kk17k"]
+[ext_resource type="Texture2D" uid="uid://yshtlxh2omx3" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级1_2.png" id="2_yv6es"]
+[ext_resource type="Texture2D" uid="uid://bakaghpaj8v2g" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级1_3.png" id="3_qwntn"]
+[ext_resource type="Texture2D" uid="uid://ckt42lv6p3quc" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级1_4.png" id="4_g3tv5"]
+[ext_resource type="Texture2D" uid="uid://ci3b5a2lb6373" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级1_5.png" id="5_38yaj"]
+[ext_resource type="Texture2D" uid="uid://g6awm2jebagq" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级1_6.png" id="6_c5poi"]
+[ext_resource type="Texture2D" uid="uid://coock01ph51a4" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级1_7.png" id="7_x1hqj"]
+[ext_resource type="Texture2D" uid="uid://cutuhmsfdqhag" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级1_8.png" id="8_c0tw4"]
+[ext_resource type="Texture2D" uid="uid://6t3vivaom8gb" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级1_9.png" id="9_ydfyd"]
+[ext_resource type="Texture2D" uid="uid://blit8uj23dap2" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级3.png" id="10_slvt1"]
+[ext_resource type="Texture2D" uid="uid://bhsiy4yg3ru1s" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级3_2.png" id="11_64vov"]
+[ext_resource type="Texture2D" uid="uid://5h22ke2s5nrx" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级3_3.png" id="12_7c3l6"]
+[ext_resource type="Texture2D" uid="uid://dwdjxrq0yn2vm" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级2_5.png" id="13_v1sph"]
+[ext_resource type="Texture2D" uid="uid://iuj05vbljfy8" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级2_6.png" id="14_wfmnj"]
+[ext_resource type="Texture2D" uid="uid://cfbcco02q44y4" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级2_7.png" id="15_s53ll"]
+[ext_resource type="Texture2D" uid="uid://jum0vdwtbltn" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级3_8.png" id="16_4pvs7"]
+[ext_resource type="Texture2D" uid="uid://cvm1dwfmx2did" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级2.png" id="17_wxakq"]
+[ext_resource type="Texture2D" uid="uid://0cdvondttdfp" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级2_2.png" id="18_mcjtw"]
+[ext_resource type="Texture2D" uid="uid://btvvwbubp45t7" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级2_3.png" id="19_adapt"]
+[ext_resource type="Texture2D" uid="uid://bptoqkxwoajwm" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级2_4.png" id="20_luw80"]
+[ext_resource type="Texture2D" uid="uid://bdytt3qhwcxcw" path="res://艺术/关卡图片/樱之诗关卡/GUI/速度显示/速度等级2_8.png" id="21_kar0d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tih8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kk17k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yv6es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qwntn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g3tv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_38yaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c5poi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x1hqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c0tw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ydfyd")
+}],
+"loop": true,
+"name": &"一速",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_slvt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_64vov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7c3l6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_v1sph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wfmnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_s53ll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4pvs7")
+}],
+"loop": true,
+"name": &"三速",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_wxakq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mcjtw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_adapt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_luw80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_v1sph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wfmnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_s53ll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kar0d")
+}],
+"loop": true,
+"name": &"二速",
+"speed": 4.0
+}]
+
+[sub_resource type="Animation" id="Animation_bebto"]
+length = 4.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("速度显示:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("速度显示:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["一速"]
+}
+
+[sub_resource type="Animation" id="Animation_kdm7a"]
+length = 1.16667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("速度显示:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("速度显示:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["三速"]
+}
+
+[sub_resource type="Animation" id="Animation_sh4n1"]
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("速度显示:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("速度显示:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["二速"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tj4lj"]
+_data = {
+"一速": SubResource("Animation_bebto"),
+"三速": SubResource("Animation_kdm7a"),
+"二速": SubResource("Animation_sh4n1")
+}
+
+[node name="速度显示框" type="Node2D"]
+
+[node name="速度显示" type="AnimatedSprite2D" parent="."]
+position = Vector2(340, 232)
+sprite_frames = SubResource("SpriteFrames_tih8x")
+animation = &"一速"
+frame = 8
+
+[node name="速度动画" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tj4lj")
+}
+autoplay = "一速"

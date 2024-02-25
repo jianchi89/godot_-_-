@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ei6bd8db7ih"]
+
+[ext_resource type="AudioStream" uid="uid://c2dfo5fewjlf0" path="res://音效/歌曲/はな - 櫻ノ詩.mp3" id="1_qblc6"]
+
+[sub_resource type="GDScript" id="GDScript_nth42"]
+script/source = "extends Node2D
+@onready var 樱之诗 = $AudioStreamPlayer
+var audio
+
+func _ready():
+	var audio = 樱之诗.get_playback_position()
+	
+
+func _process(delta):
+	print(audio)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_nth42")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_qblc6")
+autoplay = true

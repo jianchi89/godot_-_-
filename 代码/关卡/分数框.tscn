@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://67w2503k1oui"]
+
+[ext_resource type="Texture2D" uid="uid://cawlkqijkvy5u" path="res://艺术/关卡图片/樱之诗关卡/GUI/分数框.png" id="1_3c1y5"]
+[ext_resource type="FontFile" uid="uid://djnuwer8tmg6d" path="res://艺术/关卡图片/樱之诗关卡/GUI/AtomicClockRadio.ttf" id="2_txjrm"]
+
+[node name="分数框" type="Node2D"]
+position = Vector2(62, 35)
+
+[node name="分数框" type="Sprite2D" parent="."]
+position = Vector2(1, 1)
+texture = ExtResource("1_3c1y5")
+
+[node name="分数文本" type="Label" parent="."]
+offset_left = -86.0
+offset_top = 3.0
+offset_right = 89.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("2_txjrm")
+theme_override_font_sizes/font_size = 35
+text = "100.000"

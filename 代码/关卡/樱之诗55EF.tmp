@@ -1,0 +1,740 @@
+[gd_scene load_steps=74 format=3 uid="uid://d0tebjpugr4gg"]
+
+[ext_resource type="Script" path="res://代码/关卡/樱之诗_关卡.gd" id="1_poiau"]
+[ext_resource type="Texture2D" uid="uid://dxw3xt370um8c" path="res://艺术/关卡图片/樱之诗关卡/俄罗斯方块下坠/俄罗斯方块1.png" id="2_3ftxj"]
+[ext_resource type="Texture2D" uid="uid://b6sy24l8hbceu" path="res://艺术/关卡图片/樱之诗关卡/俄罗斯方块背景.png" id="3_j84pt"]
+[ext_resource type="Script" path="res://代码/关卡/俄罗斯方块背景.gd" id="3_r2o8x"]
+[ext_resource type="Script" path="res://代码/关卡/GUI.gd" id="3_u2iuf"]
+[ext_resource type="PackedScene" uid="uid://6hk21mn7p3xs" path="res://代码/关卡/樱之诗大背景.tscn" id="3_wes6l"]
+[ext_resource type="Texture2D" uid="uid://m8g1tg48htja" path="res://艺术/关卡图片/樱之诗关卡/俄罗斯方块下坠/俄罗斯方块2.png" id="4_h5nrh"]
+[ext_resource type="PackedScene" uid="uid://bjscq5614bgyk" path="res://代码/关卡/动画小人.tscn" id="4_pn215"]
+[ext_resource type="PackedScene" uid="uid://hy2tobo12xg7" path="res://代码/关卡/速度显示框.tscn" id="6_bpkk3"]
+[ext_resource type="PackedScene" uid="uid://67w2503k1oui" path="res://代码/关卡/分数框.tscn" id="7_cst58"]
+[ext_resource type="PackedScene" uid="uid://ce0m65rghvk1c" path="res://代码/关卡/圆弧进度条.tscn" id="8_pp76k"]
+[ext_resource type="Texture2D" uid="uid://bgko1kcvtvht7" path="res://艺术/特效/振动特效.png" id="8_sbg21"]
+[ext_resource type="Texture2D" uid="uid://bantyblej8edw" path="res://艺术/关卡图片/樱之诗关卡/俄罗斯方块下坠/预测落位方块2.png" id="10_caykj"]
+[ext_resource type="AudioStream" uid="uid://c2dfo5fewjlf0" path="res://音效/歌曲/はな - 櫻ノ詩.mp3" id="12_cfyo1"]
+[ext_resource type="AudioStream" uid="uid://cxmwpp8q5ufht" path="res://音效/俄罗斯方块/移动1.mp3" id="13_2sf0p"]
+[ext_resource type="Texture2D" uid="uid://bxercjym8kcfo" path="res://艺术/特效/樱花飘落素材.png" id="14_u4frr"]
+[ext_resource type="AudioStream" uid="uid://bq4w02n44dlko" path="res://音效/俄罗斯方块/快速下落3.mp3" id="14_us3mc"]
+[ext_resource type="AudioStream" uid="uid://c7slu6dwb2ft0" path="res://音效/俄罗斯方块/移动2.mp3" id="14_uvy8k"]
+[ext_resource type="Script" path="res://代码/关卡/樱之诗大背景.gd" id="14_w7xbh"]
+[ext_resource type="AudioStream" uid="uid://cb01h8k75vum7" path="res://音效/俄罗斯方块/移动3.mp3" id="15_8agfu"]
+[ext_resource type="AudioStream" uid="uid://bmns354wbbnup" path="res://音效/俄罗斯方块/移动10.mp3" id="15_epwh7"]
+[ext_resource type="AudioStream" uid="uid://7fhrfplxp17d" path="res://音效/俄罗斯方块/移动4.mp3" id="16_5v5x8"]
+[ext_resource type="Texture2D" uid="uid://brt5ajnpltafg" path="res://艺术/关卡图片/樱之诗关卡/GUI/下一个方块的框.png" id="18_ehk0i"]
+[ext_resource type="AudioStream" uid="uid://g37clu5w2j1y" path="res://音效/俄罗斯方块/移动5.mp3" id="18_x8mit"]
+[ext_resource type="AudioStream" uid="uid://bre5337gi5j0k" path="res://音效/俄罗斯方块/移动6.mp3" id="19_58b7h"]
+[ext_resource type="AudioStream" uid="uid://brja0b1edc5p2" path="res://音效/俄罗斯方块/移动7x2.mp3" id="20_2w5fq"]
+[ext_resource type="AudioStream" uid="uid://bp2g0od01hejd" path="res://音效/俄罗斯方块/移动8.mp3" id="21_351b4"]
+[ext_resource type="AudioStream" uid="uid://rgtcj5ro42ct" path="res://音效/俄罗斯方块/移动9.mp3" id="22_b3emg"]
+[ext_resource type="AudioStream" uid="uid://bj3x03nwfkwu3" path="res://音效/俄罗斯方块/落地.mp3" id="23_u4yko"]
+[ext_resource type="AudioStream" uid="uid://banote0oyico5" path="res://音效/俄罗斯方块/落地2.mp3" id="24_5p4jh"]
+[ext_resource type="AudioStream" uid="uid://6y8euvsf2lan" path="res://音效/俄罗斯方块/落地3.mp3" id="25_h3v14"]
+[ext_resource type="AudioStream" uid="uid://by6btbeynplvt" path="res://音效/俄罗斯方块/快速下落1.mp3" id="26_iwgwc"]
+[ext_resource type="AudioStream" uid="uid://hj71p4nhwkp4" path="res://音效/俄罗斯方块/快速下落2.mp3" id="27_582tu"]
+[ext_resource type="AudioStream" uid="uid://qpwi18rxmrgv" path="res://音效/俄罗斯方块/失败了.wav" id="28_mhah8"]
+[ext_resource type="AudioStream" uid="uid://dojr8etmpb23f" path="res://音效/俄罗斯方块/失败音乐.mp3" id="29_8l1qk"]
+[ext_resource type="AudioStream" uid="uid://dg7o6kcesx2ba" path="res://音效/俄罗斯方块/消行2.mp3" id="29_qc4q3"]
+[ext_resource type="AudioStream" uid="uid://bng2vhfxtnkxl" path="res://音效/俄罗斯方块/消行4.mp3" id="30_b63ut"]
+[ext_resource type="AudioStream" uid="uid://cu2ad1eg7m7qe" path="res://音效/俄罗斯方块/消行3.mp3" id="30_soife"]
+
+[sub_resource type="Gradient" id="Gradient_d7k53"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.317647)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w424p"]
+gradient = SubResource("Gradient_d7k53")
+
+[sub_resource type="Curve" id="Curve_o2k1u"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.307692), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2chfm"]
+curve = SubResource("Curve_o2k1u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3vl43"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, -50, 1)
+velocity_pivot = Vector3(50, -10, 0)
+direction = Vector3(50, 50, 0)
+spread = 42.75
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+radial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 27.5
+linear_accel_max = 27.5
+scale_curve = SubResource("CurveTexture_2chfm")
+color_ramp = SubResource("GradientTexture1D_w424p")
+
+[sub_resource type="Animation" id="Animation_fwfse"]
+resource_name = "分数改变"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("分数文本:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-86, 3), Vector2(-96, 3), Vector2(-89, 3), Vector2(-86, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_jcvx3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("分数文本:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-86, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("振动:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("分数文本:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t6r4h"]
+resource_name = "满行分数动画"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("分数文本:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-86, 3), Vector2(-90, 1), Vector2(-86, 6.00001), Vector2(-86, -3), Vector2(-92, 4), Vector2(-85, 6), Vector2(-86, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("分数文本:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 0.278431, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("振动:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vkhrt"]
+_data = {
+"RESET": SubResource("Animation_jcvx3"),
+"分数改变": SubResource("Animation_fwfse"),
+"满行分数动画": SubResource("Animation_t6r4h")
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4xg2b"]
+texture = ExtResource("2_3ftxj")
+texture_region_size = Vector2i(36, 34)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2lwpg"]
+tile_size = Vector2i(36, 34)
+sources/0 = SubResource("TileSetAtlasSource_4xg2b")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6b3ob"]
+texture = ExtResource("4_h5nrh")
+texture_region_size = Vector2i(36, 34)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlytf"]
+texture = ExtResource("10_caykj")
+texture_region_size = Vector2i(36, 34)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ylcuw"]
+tile_size = Vector2i(36, 34)
+sources/0 = SubResource("TileSetAtlasSource_6b3ob")
+sources/2 = SubResource("TileSetAtlasSource_mlytf")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_55rj8"]
+resource_name = "shape"
+texture = ExtResource("4_h5nrh")
+texture_region_size = Vector2i(18, 17)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jrd1u"]
+tile_size = Vector2i(36, 34)
+sources/1 = SubResource("TileSetAtlasSource_55rj8")
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_i53wd"]
+
+[sub_resource type="Curve" id="Curve_vc217"]
+_data = [Vector2(0.0151515, 0.879121), 0.0, 0.0, 0, 0, Vector2(0.287879, 1), 0.0, 0.0, 0, 0, Vector2(0.704545, 0.967033), 0.0, 0.0, 0, 0, Vector2(1, 0.098901), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_lkv4h"]
+curve = SubResource("Curve_vc217")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_81tge"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 10, 1)
+angle_min = 30.0
+angle_max = 90.0
+direction = Vector3(10, 0, 0)
+spread = 100.0
+angular_velocity_min = 10.0
+angular_velocity_max = 20.0
+directional_velocity_min = 50.0
+directional_velocity_max = 50.0
+directional_velocity_curve = SubResource("CurveXYZTexture_i53wd")
+radial_velocity_min = 40.0
+radial_velocity_max = 100.0
+gravity = Vector3(20, 20, 0)
+linear_accel_min = 10.0
+linear_accel_max = 10.0
+damping_min = 5.0
+damping_max = 10.0
+scale_curve = SubResource("CurveTexture_lkv4h")
+
+[sub_resource type="Animation" id="Animation_6aoi1"]
+resource_name = "樱花全程动画"
+length = 237.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("樱花特效:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../俄罗斯方块背景")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"已_进入_鼓点"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_28d7u"]
+length = 0.001
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("樱花特效:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_78bup"]
+_data = {
+"RESET": SubResource("Animation_28d7u"),
+"樱花全程动画": SubResource("Animation_6aoi1")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p5as2"]
+streams_count = 3
+stream_0/stream = ExtResource("26_iwgwc")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("14_us3mc")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("27_582tu")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_oxc4o"]
+playback_mode = 2
+streams_count = 11
+stream_0/stream = ExtResource("13_2sf0p")
+stream_0/weight = 0.0
+stream_1/stream = ExtResource("14_uvy8k")
+stream_1/weight = 0.0
+stream_2/stream = ExtResource("15_8agfu")
+stream_2/weight = 0.0
+stream_3/stream = ExtResource("16_5v5x8")
+stream_3/weight = 0.0
+stream_4/stream = ExtResource("18_x8mit")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("19_58b7h")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("20_2w5fq")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("20_2w5fq")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("21_351b4")
+stream_8/weight = 1.0
+stream_9/stream = ExtResource("22_b3emg")
+stream_9/weight = 1.0
+stream_10/stream = ExtResource("15_epwh7")
+stream_10/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tw15d"]
+streams_count = 4
+stream_0/stream = ExtResource("23_u4yko")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("24_5p4jh")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("25_h3v14")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("25_h3v14")
+stream_3/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jixm8"]
+playback_mode = 2
+streams_count = 2
+stream_0/stream = ExtResource("26_iwgwc")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("27_582tu")
+stream_1/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_av7s6"]
+streams_count = 3
+stream_0/stream = ExtResource("29_qc4q3")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("30_soife")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("30_b63ut")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4o1gl"]
+streams_count = 1
+stream_0/stream = ExtResource("28_mhah8")
+stream_0/weight = 1.0
+
+[sub_resource type="Animation" id="Animation_fm0mk"]
+resource_name = "左边界"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("下落TileMap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(455, 67), Vector2(447, 67)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("垫底tilemap:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(635, 237), Vector2(627, 237)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("俄罗斯方块背景:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(634, 373.001), Vector2(626, 373.001)]
+}
+
+[sub_resource type="Animation" id="Animation_lca4c"]
+resource_name = "右边界"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("下落TileMap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(455, 67), Vector2(463, 67)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("垫底tilemap:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(635, 237), Vector2(643, 237)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("俄罗斯方块背景:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(634, 373.001), Vector2(642, 373.001)]
+}
+
+[sub_resource type="Animation" id="Animation_4xva8"]
+resource_name = "往下落"
+
+[sub_resource type="Animation" id="Animation_ahmc6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextTilemap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(921, 117)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("下落TileMap:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(455, 67)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("垫底tilemap:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(635, 237)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("俄罗斯方块背景:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(634, 373.001)]
+}
+
+[sub_resource type="Animation" id="Animation_5a6eu"]
+resource_name = "普通不移动"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextTilemap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(921, 117)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("下落TileMap:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(455, 67)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("垫底tilemap:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(635, 237)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("俄罗斯方块背景:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(634, 373.001)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1mrvu"]
+_data = {
+"RESET": SubResource("Animation_ahmc6"),
+"右边界": SubResource("Animation_lca4c"),
+"左边界": SubResource("Animation_fm0mk"),
+"往下落": SubResource("Animation_4xva8"),
+"普通不移动": SubResource("Animation_5a6eu")
+}
+
+[node name="樱之诗-关卡" type="Node2D"]
+script = ExtResource("1_poiau")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(628, 382)
+
+[node name="俄罗斯方块背景" type="Sprite2D" parent="."]
+position = Vector2(634, 373.001)
+scale = Vector2(1.08, 1.11667)
+texture = ExtResource("3_j84pt")
+script = ExtResource("3_r2o8x")
+
+[node name="振动2" type="GPUParticles2D" parent="俄罗斯方块背景"]
+show_behind_parent = true
+light_mask = 0
+position = Vector2(-3.70372, 298.207)
+rotation = -3.14159
+scale = Vector2(-2.02068, -0.784019)
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_3vl43")
+texture = ExtResource("8_sbg21")
+lifetime = 2.5
+
+[node name="俄罗斯方块背景" type="Sprite2D" parent="俄罗斯方块背景"]
+visible = false
+position = Vector2(626, 373.001)
+scale = Vector2(1.08, 1.11667)
+texture = ExtResource("3_j84pt")
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_u2iuf")
+
+[node name="动画小人" parent="GUI" instance=ExtResource("4_pn215")]
+
+[node name="下一个方块的框" type="Sprite2D" parent="GUI"]
+light_mask = 0
+position = Vector2(979, 152)
+texture = ExtResource("18_ehk0i")
+
+[node name="速度显示框" parent="GUI" instance=ExtResource("6_bpkk3")]
+
+[node name="分数框" parent="GUI" instance=ExtResource("7_cst58")]
+position = Vector2(319, 414)
+
+[node name="分数框" parent="GUI/分数框" index="0"]
+light_mask = 2
+
+[node name="分数文本" parent="GUI/分数框" index="1"]
+text = "1000"
+horizontal_alignment = 2
+
+[node name="振动" type="GPUParticles2D" parent="GUI/分数框"]
+show_behind_parent = true
+light_mask = 0
+position = Vector2(-48, 35)
+rotation = -3.14159
+scale = Vector2(1.28665, -0.87549)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_3vl43")
+texture = ExtResource("8_sbg21")
+
+[node name="分数改变动画" type="AnimationPlayer" parent="GUI/分数框"]
+libraries = {
+"": SubResource("AnimationLibrary_vkhrt")
+}
+
+[node name="圆弧进度条" parent="GUI" instance=ExtResource("8_pp76k")]
+layout_mode = 1
+offset_left = 275.0
+offset_top = 535.0
+offset_right = 275.0
+offset_bottom = 535.0
+
+[node name="时间进度条" parent="GUI/圆弧进度条" index="0"]
+max_value = 237.0
+value = 1.0
+
+[node name="倒计时" type="Timer" parent="GUI/圆弧进度条"]
+wait_time = 237.0
+
+[node name="进度条倒计时" type="Timer" parent="GUI/圆弧进度条"]
+autostart = true
+
+[node name="垫底tilemap" type="TileMap" parent="."]
+position = Vector2(635, 237)
+tile_set = SubResource("TileSet_2lwpg")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-262149, 0, 0, -196613, 0, 0, -131077, 0, 0, -65541, 0, 0, -5, 0, 0, 65531, 0, 0, 131067, 0, 0, 196603, 0, 0, 262139, 0, 0, 327675, 0, 0, 393211, 0, 0, 458747, 0, 0, 524283, 0, 0, 589819, 0, 0, 655355, 0, 0, 720891, 0, 0, 786427, 0, 0, 851963, 0, 0, -262148, 0, 0, -196612, 0, 0, -131076, 0, 0, -65540, 0, 0, -4, 0, 0, 65532, 0, 0, 131068, 0, 0, 196604, 0, 0, 262140, 0, 0, 327676, 0, 0, 393212, 0, 0, 458748, 0, 0, 524284, 0, 0, 589820, 0, 0, 655356, 0, 0, 720892, 0, 0, 786428, 0, 0, 851964, 0, 0, -262147, 0, 0, -196611, 0, 0, -131075, 0, 0, -65539, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, 262141, 0, 0, 327677, 0, 0, 393213, 0, 0, 458749, 0, 0, 524285, 0, 0, 589821, 0, 0, 655357, 0, 0, 720893, 0, 0, 786429, 0, 0, 851965, 0, 0, -262146, 0, 0, -196610, 0, 0, -131074, 0, 0, -65538, 0, 0, -2, 0, 0, 65534, 0, 0, 131070, 0, 0, 196606, 0, 0, 262142, 0, 0, 327678, 0, 0, 393214, 0, 0, 458750, 0, 0, 524286, 0, 0, 589822, 0, 0, 655358, 0, 0, 720894, 0, 0, 786430, 0, 0, 851966, 0, 0, -262145, 0, 0, -196609, 0, 0, -131073, 0, 0, -65537, 0, 0, -1, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0, 720895, 0, 0, 786431, 0, 0, 851967, 0, 0, -327680, 0, 0, -262144, 0, 0, -196608, 0, 0, -131072, 0, 0, -65536, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, -327679, 0, 0, -262143, 0, 0, -196607, 0, 0, -131071, 0, 0, -65535, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 720897, 0, 0, 786433, 0, 0, -327678, 0, 0, -262142, 0, 0, -196606, 0, 0, -131070, 0, 0, -65534, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 720898, 0, 0, 786434, 0, 0, -327677, 0, 0, -262141, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 720899, 0, 0, 786435, 0, 0, -327676, 0, 0, -262140, 0, 0, -196604, 0, 0, -131068, 0, 0, -65532, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 720900, 0, 0, 786436, 0, 0)
+
+[node name="下落TileMap" type="TileMap" parent="."]
+position = Vector2(455, 67)
+tile_set = SubResource("TileSet_ylcuw")
+format = 2
+
+[node name="NextTilemap" type="TileMap" parent="."]
+light_mask = 0
+visibility_layer = 2
+position = Vector2(921, 117)
+tile_set = SubResource("TileSet_jrd1u")
+rendering_quadrant_size = 32
+format = 2
+
+[node name="樱之诗大背景" parent="." instance=ExtResource("3_wes6l")]
+visible = true
+script = ExtResource("14_w7xbh")
+
+[node name="樱花特效" type="GPUParticles2D" parent="樱之诗大背景/ParallaxBackground/ParallaxLayer" index="2"]
+position = Vector2(-27, 187)
+scale = Vector2(12.84, 7.16)
+emitting = false
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_81tge")
+texture = ExtResource("14_u4frr")
+lifetime = 10.0
+
+[node name="全程背景动画" type="AnimationPlayer" parent="樱之诗大背景/ParallaxBackground/ParallaxLayer" index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_78bup")
+}
+autoplay = "樱花全程动画"
+
+[node name="Tick" type="Timer" parent="."]
+autostart = true
+
+[node name="平移_Tick" type="Timer" parent="."]
+wait_time = 0.11
+autostart = true
+
+[node name="快速下落_Tick" type="Timer" parent="."]
+wait_time = 0.08
+autostart = true
+
+[node name="音效" type="Node" parent="."]
+
+[node name="樱之诗歌曲" type="AudioStreamPlayer2D" parent="音效"]
+stream = ExtResource("12_cfyo1")
+volume_db = -5.0
+autoplay = true
+
+[node name="直接落地" type="AudioStreamPlayer2D" parent="音效"]
+stream = SubResource("AudioStreamRandomizer_p5as2")
+
+[node name="移动" type="AudioStreamPlayer2D" parent="音效"]
+stream = SubResource("AudioStreamRandomizer_oxc4o")
+volume_db = -1.0
+
+[node name="落地" type="AudioStreamPlayer2D" parent="音效"]
+stream = SubResource("AudioStreamRandomizer_tw15d")
+volume_db = -2.0
+
+[node name="旋转" type="AudioStreamPlayer2D" parent="音效"]
+stream = SubResource("AudioStreamRandomizer_jixm8")
+
+[node name="满行消除" type="AudioStreamPlayer2D" parent="音效"]
+stream = SubResource("AudioStreamRandomizer_av7s6")
+
+[node name="升级" type="AudioStreamPlayer2D" parent="音效"]
+
+[node name="游戏失败人声" type="AudioStreamPlayer2D" parent="音效"]
+stream = SubResource("AudioStreamRandomizer_4o1gl")
+volume_db = 6.5
+
+[node name="失败音乐" type="AudioStreamPlayer2D" parent="音效"]
+stream = ExtResource("29_8l1qk")
+
+[node name="主方框移动" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1mrvu")
+}
+
+[connection signal="timeout" from="GUI/圆弧进度条/进度条倒计时" to="GUI" method="_on_进度条倒计时_timeout"]
+[connection signal="timeout" from="Tick" to="." method="_on_tick_timeout"]
+[connection signal="timeout" from="平移_Tick" to="." method="_on_平移_tick_timeout"]
+[connection signal="timeout" from="快速下落_Tick" to="." method="_on_快速下落_tick_timeout"]
+
+[editable path="GUI/动画小人"]
+[editable path="GUI/速度显示框"]
+[editable path="GUI/分数框"]
+[editable path="GUI/圆弧进度条"]
+[editable path="樱之诗大背景"]

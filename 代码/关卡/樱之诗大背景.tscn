@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://6hk21mn7p3xs"]
+
+[ext_resource type="Texture2D" uid="uid://1f21jvfdtsik" path="res://艺术/关卡图片/樱之诗关卡/樱之诗背景图.png" id="1_bl2kq"]
+[ext_resource type="Texture2D" uid="uid://bfqutyshhmfsi" path="res://艺术/关卡图片/樱之诗关卡/樱之诗背景图_高斯模糊.png" id="2_vdygx"]
+
+[node name="樱之诗大背景" type="CanvasLayer"]
+visible = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="樱之诗背景图" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(796.123, 452.5)
+scale = Vector2(1.31221, 1.32148)
+texture = ExtResource("1_bl2kq")
+
+[node name="樱之诗背景图高斯模糊" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(796.123, 452.5)
+scale = Vector2(1.312, 1.312)
+texture = ExtResource("2_vdygx")

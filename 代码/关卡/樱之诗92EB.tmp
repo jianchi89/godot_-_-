@@ -1,0 +1,76 @@
+[gd_scene load_steps=15 format=3 uid="uid://d0tebjpugr4gg"]
+
+[ext_resource type="Script" path="res://代码/关卡/樱之诗_关卡.gd" id="1_poiau"]
+[ext_resource type="Texture2D" uid="uid://dxw3xt370um8c" path="res://艺术/关卡图片/樱之诗关卡/俄罗斯方块下坠/俄罗斯方块1.png" id="2_3ftxj"]
+[ext_resource type="Texture2D" uid="uid://b6sy24l8hbceu" path="res://艺术/关卡图片/樱之诗关卡/俄罗斯方块背景.png" id="3_j84pt"]
+[ext_resource type="PackedScene" uid="uid://6hk21mn7p3xs" path="res://代码/关卡/樱之诗大背景.tscn" id="3_wes6l"]
+[ext_resource type="Texture2D" uid="uid://m8g1tg48htja" path="res://艺术/关卡图片/樱之诗关卡/俄罗斯方块下坠/俄罗斯方块2.png" id="4_h5nrh"]
+[ext_resource type="PackedScene" uid="uid://bjscq5614bgyk" path="res://代码/关卡/动画小人.tscn" id="4_pn215"]
+[ext_resource type="PackedScene" uid="uid://hy2tobo12xg7" path="res://代码/关卡/速度显示框.tscn" id="6_bpkk3"]
+[ext_resource type="PackedScene" uid="uid://67w2503k1oui" path="res://代码/关卡/分数框.tscn" id="7_cst58"]
+[ext_resource type="PackedScene" uid="uid://ce0m65rghvk1c" path="res://代码/关卡/圆弧进度条.tscn" id="8_pp76k"]
+[ext_resource type="Texture2D" uid="uid://brt5ajnpltafg" path="res://艺术/关卡图片/樱之诗关卡/GUI/下一个方块的框.png" id="18_ehk0i"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4xg2b"]
+texture = ExtResource("2_3ftxj")
+texture_region_size = Vector2i(36, 34)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2lwpg"]
+tile_size = Vector2i(36, 34)
+sources/0 = SubResource("TileSetAtlasSource_4xg2b")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_elbu2"]
+texture = ExtResource("4_h5nrh")
+
+[sub_resource type="TileSet" id="TileSet_5evxc"]
+tile_size = Vector2i(36, 34)
+sources/0 = SubResource("TileSetAtlasSource_elbu2")
+
+[node name="樱之诗-关卡" type="Node2D"]
+script = ExtResource("1_poiau")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(628, 382)
+
+[node name="俄罗斯方块背景" type="Sprite2D" parent="."]
+position = Vector2(634, 373.001)
+scale = Vector2(1.08, 1.11667)
+texture = ExtResource("3_j84pt")
+
+[node name="垫底tilemap" type="TileMap" parent="."]
+position = Vector2(635, 237)
+tile_set = SubResource("TileSet_2lwpg")
+rendering_quadrant_size = 32
+format = 2
+
+[node name="NextTilemap" type="TileMap" parent="."]
+position = Vector2(635, 237)
+tile_set = SubResource("TileSet_5evxc")
+format = 2
+
+[node name="樱之诗大背景" parent="." instance=ExtResource("3_wes6l")]
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="动画小人" parent="GUI" instance=ExtResource("4_pn215")]
+
+[node name="下一个方块的框" type="Sprite2D" parent="GUI"]
+position = Vector2(983, 147)
+texture = ExtResource("18_ehk0i")
+
+[node name="速度显示框" parent="GUI" instance=ExtResource("6_bpkk3")]
+
+[node name="分数框" parent="GUI" instance=ExtResource("7_cst58")]
+position = Vector2(319, 414)
+
+[node name="圆弧进度条" parent="GUI" instance=ExtResource("8_pp76k")]
+layout_mode = 1
+offset_left = 275.0
+offset_top = 535.0
+offset_right = 275.0
+offset_bottom = 535.0

@@ -1,0 +1,115 @@
+[gd_scene load_steps=19 format=3 uid="uid://d0tebjpugr4gg"]
+
+[ext_resource type="Script" path="res://代码/关卡/樱之诗_关卡.gd" id="1_poiau"]
+[ext_resource type="Texture2D" uid="uid://dxw3xt370um8c" path="res://艺术/关卡图片/樱之诗关卡/俄罗斯方块下坠/俄罗斯方块1.png" id="2_3ftxj"]
+[ext_resource type="Texture2D" uid="uid://b6sy24l8hbceu" path="res://艺术/关卡图片/樱之诗关卡/俄罗斯方块背景.png" id="3_j84pt"]
+[ext_resource type="PackedScene" uid="uid://6hk21mn7p3xs" path="res://代码/关卡/樱之诗大背景.tscn" id="3_wes6l"]
+[ext_resource type="Texture2D" uid="uid://m8g1tg48htja" path="res://艺术/关卡图片/樱之诗关卡/俄罗斯方块下坠/俄罗斯方块2.png" id="4_h5nrh"]
+[ext_resource type="PackedScene" uid="uid://bjscq5614bgyk" path="res://代码/关卡/动画小人.tscn" id="4_pn215"]
+[ext_resource type="PackedScene" uid="uid://hy2tobo12xg7" path="res://代码/关卡/速度显示框.tscn" id="6_bpkk3"]
+[ext_resource type="PackedScene" uid="uid://67w2503k1oui" path="res://代码/关卡/分数框.tscn" id="7_cst58"]
+[ext_resource type="PackedScene" uid="uid://ce0m65rghvk1c" path="res://代码/关卡/圆弧进度条.tscn" id="8_pp76k"]
+[ext_resource type="Texture2D" uid="uid://bantyblej8edw" path="res://艺术/关卡图片/樱之诗关卡/俄罗斯方块下坠/预测落位方块2.png" id="10_caykj"]
+[ext_resource type="Texture2D" uid="uid://brt5ajnpltafg" path="res://艺术/关卡图片/樱之诗关卡/GUI/下一个方块的框.png" id="18_ehk0i"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4xg2b"]
+texture = ExtResource("2_3ftxj")
+texture_region_size = Vector2i(36, 34)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2lwpg"]
+tile_size = Vector2i(36, 34)
+sources/0 = SubResource("TileSetAtlasSource_4xg2b")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6b3ob"]
+texture = ExtResource("4_h5nrh")
+texture_region_size = Vector2i(36, 34)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlytf"]
+texture = ExtResource("10_caykj")
+texture_region_size = Vector2i(36, 34)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ylcuw"]
+tile_size = Vector2i(36, 34)
+sources/0 = SubResource("TileSetAtlasSource_6b3ob")
+sources/2 = SubResource("TileSetAtlasSource_mlytf")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_55rj8"]
+resource_name = "shape"
+texture = ExtResource("4_h5nrh")
+texture_region_size = Vector2i(18, 17)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jrd1u"]
+tile_size = Vector2i(36, 34)
+sources/1 = SubResource("TileSetAtlasSource_55rj8")
+
+[node name="樱之诗-关卡" type="Node2D"]
+script = ExtResource("1_poiau")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(628, 382)
+
+[node name="俄罗斯方块背景" type="Sprite2D" parent="."]
+position = Vector2(634, 373.001)
+scale = Vector2(1.08, 1.11667)
+texture = ExtResource("3_j84pt")
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="动画小人" parent="GUI" instance=ExtResource("4_pn215")]
+
+[node name="下一个方块的框" type="Sprite2D" parent="GUI"]
+light_mask = 0
+position = Vector2(979, 152)
+texture = ExtResource("18_ehk0i")
+
+[node name="速度显示框" parent="GUI" instance=ExtResource("6_bpkk3")]
+
+[node name="分数框" parent="GUI" instance=ExtResource("7_cst58")]
+position = Vector2(319, 414)
+
+[node name="圆弧进度条" parent="GUI" instance=ExtResource("8_pp76k")]
+layout_mode = 1
+offset_left = 275.0
+offset_top = 535.0
+offset_right = 275.0
+offset_bottom = 535.0
+
+[node name="垫底tilemap" type="TileMap" parent="."]
+position = Vector2(635, 237)
+tile_set = SubResource("TileSet_2lwpg")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-262149, 0, 0, -196613, 0, 0, -131077, 0, 0, -65541, 0, 0, -5, 0, 0, 65531, 0, 0, 131067, 0, 0, 196603, 0, 0, 262139, 0, 0, 327675, 0, 0, 393211, 0, 0, 458747, 0, 0, 524283, 0, 0, 589819, 0, 0, 655355, 0, 0, 720891, 0, 0, 786427, 0, 0, 851963, 0, 0, -262148, 0, 0, -196612, 0, 0, -131076, 0, 0, -65540, 0, 0, -4, 0, 0, 65532, 0, 0, 131068, 0, 0, 196604, 0, 0, 262140, 0, 0, 327676, 0, 0, 393212, 0, 0, 458748, 0, 0, 524284, 0, 0, 589820, 0, 0, 655356, 0, 0, 720892, 0, 0, 786428, 0, 0, 851964, 0, 0, -262147, 0, 0, -196611, 0, 0, -131075, 0, 0, -65539, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, 262141, 0, 0, 327677, 0, 0, 393213, 0, 0, 458749, 0, 0, 524285, 0, 0, 589821, 0, 0, 655357, 0, 0, 720893, 0, 0, 786429, 0, 0, 851965, 0, 0, -262146, 0, 0, -196610, 0, 0, -131074, 0, 0, -65538, 0, 0, -2, 0, 0, 65534, 0, 0, 131070, 0, 0, 196606, 0, 0, 262142, 0, 0, 327678, 0, 0, 393214, 0, 0, 458750, 0, 0, 524286, 0, 0, 589822, 0, 0, 655358, 0, 0, 720894, 0, 0, 786430, 0, 0, 851966, 0, 0, -262145, 0, 0, -196609, 0, 0, -131073, 0, 0, -65537, 0, 0, -1, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0, 720895, 0, 0, 786431, 0, 0, 851967, 0, 0, -327680, 0, 0, -262144, 0, 0, -196608, 0, 0, -131072, 0, 0, -65536, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, -327679, 0, 0, -262143, 0, 0, -196607, 0, 0, -131071, 0, 0, -65535, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 720897, 0, 0, 786433, 0, 0, -327678, 0, 0, -262142, 0, 0, -196606, 0, 0, -131070, 0, 0, -65534, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 720898, 0, 0, 786434, 0, 0, -327677, 0, 0, -262141, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 720899, 0, 0, 786435, 0, 0, -327676, 0, 0, -262140, 0, 0, -196604, 0, 0, -131068, 0, 0, -65532, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 720900, 0, 0, 786436, 0, 0)
+
+[node name="下落TileMap" type="TileMap" parent="."]
+position = Vector2(455, 67)
+tile_set = SubResource("TileSet_ylcuw")
+format = 2
+
+[node name="NextTilemap" type="TileMap" parent="."]
+light_mask = 0
+visibility_layer = 2
+position = Vector2(921, 117)
+tile_set = SubResource("TileSet_jrd1u")
+rendering_quadrant_size = 32
+format = 2
+
+[node name="樱之诗大背景" parent="." instance=ExtResource("3_wes6l")]
+
+[node name="Tick" type="Timer" parent="."]
+
+[node name="平移_Tick" type="Timer" parent="."]
+wait_time = 0.11
+autostart = true
+
+[connection signal="timeout" from="Tick" to="." method="_on_tick_timeout"]
+[connection signal="timeout" from="平移_Tick" to="." method="_on_平移_tick_timeout"]
